@@ -2,18 +2,35 @@
 local Wikipedia ={
     ["Owl Hub"] = {"Owl Hub","https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"},
 	["Potato Hub"] = {"Potato Hub","https://www.potato-hub.com/PotatoHub.lua"},
-	["AnyChat"] = {"AnyChat","https://pastebin.com/raw/bFSFcCyv"}
+	["AnyChat"] = {"AnyChat","https://pastebin.com/raw/bFSFcCyv"},
+	["Dark Dex"] = {"Dark Dex","https://pastebin.com/raw/0MaQapPs"},
+	["Infinite Yield"] = {"Infinite Yield","https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"},
+	["Natural Disaster Survival"] = {"Natural Disaster Survival","https://pastebin.com/raw/Q7mtCw8U"},
+	["Murder [ESP/Rejoin]"] = {"Murder [ESP/Rejoin] (Rejoin Keybind is M)","https://pastebin.com/raw/7QyRnAcs"},
+	["Reviz Admin"] = {"Reviz Admin","https://pastebin.com/raw/KNUzQPYS"},
+	["Vortex Hub"] = {"Vortex Hub","https://raw.githubusercontent.com/Eprx/scripts/master/vortexhub"},
+	["Unnamed ESP"] = {"Unnamed ESP","https://pastebin.com/raw/z4y56GVg"}
 }
 
 function loadstr(linkN)
-    loadstring(game:HttpGet(linkN))();
+loadstring(game:HttpGet(linkN))();
 end
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/SKZjdjdj"))();
-local Hubs = library:CreateSection("Hubs")
+local Hubs = library:CreateSection("Wiki")
 Hubs:Label("The Wikipedia For (Some) Scripts")
 for i,v in pairs(Wikipedia) do
-	Hubs:Button(Wikipedia[i][1], function()
-		loadstr(Wikipedia[i][2])
-	end)
-end
+Hubs:Button(Wikipedia[i][1], function()
+loadstr(Wikipedia[i][2])
+end) end
 library:Ready()
+local Ped = game.CoreGui:WaitForChild("ScreenGui")
+game:GetService("UserInputService").InputBegan:Connect(function(Key,IsChat)
+if IsChat then return end
+if Key.KeyCode == Enum.KeyCode.RightAlt then
+Ped.Enabled = (not Ped.Enabled)
+end end)
+game.StarterGui:SetCore("SendNotification", {
+	Title = "Toggle UI",
+	Text = "Right Alt",
+	Duration = 3,
+})
