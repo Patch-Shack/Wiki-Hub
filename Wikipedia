@@ -8,15 +8,12 @@ local Wikipedia ={
 function loadstr(linkN)
     loadstring(game:HttpGet(linkN))();
 end
-
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/SKZjdjdj"))();
-
 local Hubs = library:CreateSection("Hubs")
-
+Hubs:Label("The Wikipedia For (Some) Scripts")
 for i,v in pairs(Wikipedia) do
 	Hubs:Button(Wikipedia[i][1], function()
 		loadstr(Wikipedia[i][2])
 	end)
 end
-
 library:Ready()
