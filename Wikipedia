@@ -1,0 +1,22 @@
+-- by Wiki#8697
+local Wikipedia ={
+    ["Owl Hub"] = {"Owl Hub","https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"},
+	["Potato Hub"] = {"Potato Hub","https://www.potato-hub.com/PotatoHub.lua"},
+	["AnyChat"] = {"AnyChat","https://pastebin.com/raw/bFSFcCyv"}
+}
+
+function loadstr(linkN)
+    loadstring(game:HttpGet(linkN))();
+end
+
+local library = loadstring(game:HttpGet("https://pastebin.com/raw/SKZjdjdj"))();
+
+local Hubs = library:CreateSection("Hubs")
+
+for i,v in pairs(Wikipedia) do
+	Hubs:Button(Wikipedia[i][1], function()
+		loadstr(Wikipedia[i][2])
+	end)
+end
+
+library:Ready()
