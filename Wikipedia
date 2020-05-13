@@ -11,7 +11,9 @@ local Wikipedia ={
 	["Vortex Hub"] = {"Vortex Hub","https://raw.githubusercontent.com/Eprx/scripts/master/vortexhub"},
 	["Unnamed ESP"] = {"Unnamed ESP","https://pastebin.com/raw/z4y56GVg"},
 	["Piggy Bypass Speed GUI"] = {"Piggy Bypass Speed GUI","https://pastebin.com/raw/aA8CUQAX"},
-	["Giant Survival"] = {"Giant Survival","https://pastebin.com/raw/twNdn8yn"}
+	["Giant Survival"] = {"Giant Survival","https://pastebin.com/raw/twNdn8yn"},
+	["Counter Blox Fucker"] = {"Counter Blox Fucker","https://pastebin.com/raw/XesTYnAF"},
+	["Ro Ghoul AutoFarm"] = {"Ro Ghoul AutoFarm","https://pastebin.com/raw/MdK8dy1k"}
 }
 
 function loadstr(linkN)
